@@ -21,5 +21,41 @@ public class ParkingLot {
 
     }
 
+    public boolean park(SlotType type){
+
+        int available = availableSlots.get(type);
+
+        if(available == 0){
+            return false;
+        }
+
+        availableSlots.put(type, available - 1);
+        return true;
+
+    }
+
+    public boolean exit(SlotType type){
+
+        int available = availableSlots.get(type);
+        int total = totalSlots.get(type);
+
+        if(total == available){
+            return false;
+        }
+        availableSlots.put(type, available + 1);
+        return true;
+
+    }
+
+    public void displayCurrentStatus(){
+
+        System.out.println("\nCurrent Parking Lot Status:");
+        for(SlotType type: SlotType.values()){
+            System.out.println(
+                    type + ": " + availableSlots.get(type) + "/" + totalSlots.get(type) + " available slots."
+            );
+        }
+
+    }
 
 }

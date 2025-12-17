@@ -39,10 +39,10 @@ public class Main {
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "1" -> System.out.println(1); //handle a park
-                case "2" -> System.out.println(2); //handle an exit
+                case "1" -> System.out.println("Handling Park...");
+                case "2" -> System.out.println("Handling Exit...");
                 case "3" -> running = false;
-                default -> System.out.println("Invalid option. Please reselect.");
+                default -> System.out.println("Invalid option.");
             }
 
         }
