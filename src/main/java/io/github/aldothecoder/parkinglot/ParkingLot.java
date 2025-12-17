@@ -55,7 +55,7 @@ public class ParkingLot {
                     type + ": " + availableSlots.get(type) + "/" + totalSlots.get(type) + " available slots."
             );
         }
-
+        System.out.println("");
     }
 
 }
